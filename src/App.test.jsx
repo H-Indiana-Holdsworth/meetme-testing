@@ -11,6 +11,6 @@ test('Should render the header', async () => {
   const name = await screen.findByText(/vonta/i)
   expect(name).toBeInTheDocument()
 
-  const img = await screen.findByAltText(/alchemy/i)
+  const img = screen.getByAltText(/alchemy/i)
   expect(img).toBeInTheDocument()
 })
