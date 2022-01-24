@@ -1,5 +1,4 @@
-import { screen, render, waitForElementToBeRemoved } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { screen, render } from '@testing-library/react'
 import App from './App'
 
 test('Should render the header', async () => {
@@ -13,4 +12,9 @@ test('Should render the header', async () => {
 
   const img = screen.getByAltText(/alchemy/i)
   expect(img).toBeInTheDocument()
+
+  const bg = screen.getByRole('banner')
+  expect(bg).toHaveStyle({
+    background: 'var(--grey)',
+  })
 })
